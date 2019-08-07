@@ -7,22 +7,31 @@ Matt Dowle then issued an [RFH (request-for-help)](https://twitter.com/MattDowle
 Tips on where to start: https://github.com/Rdatatable/data.table/wiki/Presentations
 
 ## Brainstorming / no bad ideas / no ranking yet
+
+### algorithms
+
+#### parallel ordering, finding the groups, high cardinality focus
+
+#### overcoming OpenMP's ordered clause non-parallel after ordered section in the GNU implementation
+
+#### overcoming no #pragma omp cancel in older versions of OpenMP (to support them)
+
+### technical tricks
+
 #### truelength-clobber
 *  find the commit in base R which initialized truelength to zero. That was instigated by Matt asking Simon Urbanek off list to make that change. Once that groundwork was in place, data.table could then start to rely on it given a dependency on that R release. (R's own misuse of truelength assumed to be positive sign only.)
 * counting in truelength with sign bit on
 * clobber now promoted to R but not on by default yet (another proposal needed to be accepted first).
 * proposals for improvement to reduce complexity/risk
 * benchmark is easy and compelling > 10x (which is why it made it to base R)
-  
-#### parallel ordering, finding the groups, high cardinality focus
 
 #### factor vs character from parallelism's perspective
 
-#### overcoming OpenMP's ordered clause non-parallel after ordered section in the GNU implementation
+#### overallocation to avoid data copies
+* of columns
+* of rows (to be in [data.table#635](https://github.com/Rdatatable/data.table/issues/635))
 
-#### overcoming no #pragma omp cancel in older versions of OpenMP (to support them)
-
-#### Literature review
+### Literature review
 
 #### The short-circuits from Terdiman and Herf, and how data.table applied them.
 
