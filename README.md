@@ -26,4 +26,6 @@ Tips on where to start: https://github.com/Rdatatable/data.table/wiki/Presentati
 
 #### The short-circuits from Terdiman and Herf, and how data.table applied them.
 
-... keep adding
+#### Benchmarks
+* 1st and 2nd run times on big data (0.5GB, 5GB and 50GB), like https://h2oai.github.io/db-benchmark/.
+* Call-overhead for iterating many small queries could be an aspect to write about too.
